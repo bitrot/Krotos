@@ -1,63 +1,51 @@
-source 'https://rubygems.org'
+source :rubygems
 
-ruby '1.9.3'
 gem 'rails'
+gem 'jquery-rails'
+gem 'json'
+gem 'cancan'
+gem 'slim-rails'
+gem 'strong_parameters'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+gem "ember-rails"
+gem 'puma'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass', '~> 2.2.2.0'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem 'json'
-gem 'cancan'
-gem 'haml-rails'
-gem 'strong_parameters'
-gem 'kaminari'
-gem 'kaminari-bootstrap'
-
-group :production do
-  gem 'puma'
-  gem 'pg'
-end
-
 group :development do
+  gem 'annotate', ">=2.5.0"
   gem "better_errors"
   gem "binding_of_caller" # Optional, only for the advanced features
-  gem 'annotate', ">=2.5.0"
+  gem 'guard-bundler'
+  gem 'guard-puma'
+  gem 'guard-cucumber'
+  gem 'rb-fsevent', require: false
   gem 'sqlite3'
 end
 
-# Gems used for interfacing with teh backend music services
+group :development, :test do
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'cucumber'
+  gem 'headless'
+  gem 'poltergeist'
+  gem 'rspec-rails'
+  gem 'vcr'
+  gem 'jasmine'
+end
+
+group :production do
+  gem 'pg'
+end
+
+# Gems used for interfacing with the backend music services
 group :services do
   gem 'hallon'
   gem 'librmpd'
 end
-
-# To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
-gem "ember-rails"
