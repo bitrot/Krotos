@@ -39,6 +39,12 @@ group :development do
   gem 'sqlite3'
 end
 
+# Gems used for interfacing with teh backend music services
+group :services do
+  gem 'hallon'
+  gem 'librmpd'
+end
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
