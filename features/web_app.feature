@@ -4,5 +4,5 @@ Feature: Working Ember.js App
 
   @javascript
   Scenario: Visit the homepage
-    Given I visit the homepage
+    When I visit the homepage
     Then I should see an Ember.js app
