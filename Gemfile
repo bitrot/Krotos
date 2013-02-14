@@ -1,14 +1,15 @@
 source :rubygems
 
 gem 'rails'
+gem "ember-rails"
 gem 'jquery-rails'
+gem 'slim-rails'
+
 gem 'json'
 gem 'cancan'
-gem 'slim-rails'
 gem 'strong_parameters'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
-gem "ember-rails"
 gem 'puma'
 
 group :assets do
@@ -24,6 +25,7 @@ group :development do
   gem "binding_of_caller" # Optional, only for the advanced features
   gem 'guard-bundler'
   gem 'guard-puma'
+  gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'rb-fsevent', require: false
   gem 'sqlite3'
@@ -32,7 +34,8 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'cucumber'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'headless'
   gem 'poltergeist'
   gem 'rspec-rails'
