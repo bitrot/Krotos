@@ -11,7 +11,7 @@ module MusicPlayer
   end
 
   def self.client
-    @client ||= MusicPlayer::Client
+    @client ||= MusicPlayer::Client.new
   end
 
   def self.client=(player_client)

@@ -1,10 +1,11 @@
 $LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
+puts $LOAD_PATH
 require 'music_player'
 
 describe MusicPlayer do
   describe '#play' do
-    it "plays a song" do
-      song = "test song"
+    it 'plays a song' do
+      song = 'test song'
       client = double
       client.should_receive(:play).with(song)
 
@@ -30,10 +31,10 @@ describe MusicPlayer do
 
     it 'sets config values passed in a block' do
       MusicPlayer.setup do |config|
-        config.test_value = "test_value"
+        config.test_value = 'test_value'
       end
 
-      MusicPlayer.config.test_value.should eq "test_value"
+      MusicPlayer.config.test_value.should eq 'test_value'
     end
   end
 end
