@@ -50,5 +50,6 @@ end
 # Gems used for interfacing with the backend music services
 group :services do
   gem 'hallon'
+  gem 'hallon-openal'
   gem 'librmpd'
 end
