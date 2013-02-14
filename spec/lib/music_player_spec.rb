@@ -13,6 +13,50 @@ describe MusicPlayer do
     end
   end
 
+  describe '#stop' do
+    it 'stops the playing song' do
+      song = 'test song'
+      client = double
+      client.should_receive(:stop)
+
+      MusicPlayer.client = client
+      MusicPlayer.stop
+    end
+  end
+
+  describe '#pause' do
+    it 'toggles the pause state of the current song' do
+      song = 'test song'
+      client = double
+      client.should_receive(:pause)
+
+      MusicPlayer.client = client
+      MusicPlayer.pause
+    end
+  end
+
+  describe '#next' do
+    it 'goes to the next song in the playlist' do
+      song = 'test song'
+      client = double
+      client.should_receive(:next)
+
+      MusicPlayer.client = client
+      MusicPlayer.client.next
+    end
+  end
+
+  describe '#previous' do
+    it 'goes to the previous song in the playlist' do
+      song = 'test song'
+      client = double
+      client.should_receive(:previous)
+
+      MusicPlayer.client = client
+      MusicPlayer.client.previous
+    end
+  end
+
   describe '#config' do
     it 'has a configuration object' do
       MusicPlayer.config.should be_a MusicPlayer::Config
