@@ -2,54 +2,41 @@ $LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
 
 require 'music_player'
 
-describe MusicPlayer::Client do
+describe MusicPlayer::Player do
+  let(:player) { double }
   describe '#play' do
     it 'plays a song' do
       song = 'test song'
-      client = double
-      client.should_receive(:play).with(song)
-
-      client.play(song)
+      player.should_receive(:play).with(song)
+      player.play(song)
     end
   end
 
   describe '#stop' do
     it 'stops the playing song' do
-      song = 'test song'
-      client = double
-      client.should_receive(:stop)
-
-      client.stop
+      player.should_receive(:stop)
+      player.stop
     end
   end
 
   describe '#pause' do
     it 'toggles the pause state of the current song' do
-      song = 'test song'
-      client = double
-      client.should_receive(:pause)
-
-      client.pause
+      player.should_receive(:pause)
+      player.pause
     end
   end
 
   describe '#next' do
     it 'goes to the next song in the playlist' do
-      song = 'test song'
-      client = double
-      client.should_receive(:next)
-
-      client.next
+      player.should_receive(:next)
+      player.next
     end
   end
 
   describe '#previous' do
     it 'goes to the previous song in the playlist' do
-      song = 'test song'
-      client = double
-      client.should_receive(:previous)
-
-      client.previous
+      player.should_receive(:previous)
+      player.previous
     end
   end
 

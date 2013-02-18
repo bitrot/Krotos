@@ -1,5 +1,5 @@
 module MusicPlayer
-  class Client
+  class Player
     attr_reader :adapter
 
     def initialize(new_adapter = MusicPlayer.config.adapter)

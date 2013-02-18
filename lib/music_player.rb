@@ -1,36 +1,36 @@
 require 'music_player/config'
-require 'music_player/client'
+require 'music_player/player'
 
 module MusicPlayer
   def self.play(song)
-    client.play(song)
+    player.play(song)
   end
 
   def self.stop
-    client.stop
+    player.stop
   end
 
   def self.pause
-    client.pause
+    player.pause
   end
 
   def self.next
-    client.next
+    player.next
   end
 
   def self.previous
-    client.previous
+    player.previous
   end
 
   def self.now_playing
-    client.now_playing
+    player.now_playing
   end
 
-  def self.client
-    @client ||= MusicPlayer::Client.new
+  def self.player
+    @player ||= MusicPlayer::Player.new
   end
 
-  def self.client=(player_client)
-    @client = player_client
+  def self.player=(new_player)
+    @player = new_player
   end
 end
