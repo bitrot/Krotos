@@ -1,33 +1,57 @@
 module MusicPlayer
   class Player
-    attr_reader :adapter
+    attr_reader :config, :now_playing
 
-    def initialize(new_adapter = MusicPlayer.config.adapter)
-      @adapter = new_adapter
+    def initialize(new_config = MusicPlayer.config)
+      @config = new_config
     end
 
-    def adapter=(new_adapter)
-      @adapter = new_adapter
+    def queue
+      @queue ||= []
     end
 
-    def play(song)
-      adapter.play(song)
+    def queue=(new_queue)
+      @queue = new_queue
+      @queue_index = nil
+    end
+
+    def queue_index
+      @queue_index ||= 0
+    end
+
+    def song_index(song)
+      queue.index(song).tap { |i| raise MusicPlayer::SongNotQueuedError if i.nil? }
+    end
+
+    def current_song
+      @queue.fetch(queue_index) { raise MusicPlayer::EmptyQueueError }
+    end
+
+    def current_song=(new_song)
+      @queue_index = song_index(new_song)
+    end
+
+    def play
+      current_song.play
     end
 
     def stop
-      adapter.stop
+      current_song.stop
     end
 
     def next
-      adapter.next
+      @queue_index += 1
     end
 
     def previous
-      adapter.previous
+      @queue_index -= 1
     end
 
     def pause
-      adapter.pause
+      current_song.pause
     end
   end
+
+  class SongNotQueuedError < StandardError; end
+  class EmptyQueueError < StandardError; end
 end
