@@ -48,7 +48,13 @@ end
 
 # Gems used for interfacing with the backend music services
 group :services do
+  # Spotify
   gem 'hallon'
   gem 'hallon-openal'
+
+  # MPD 
   gem 'librmpd'
+
+  # Soundcloud
+  gem 'soundcloud'
 end
