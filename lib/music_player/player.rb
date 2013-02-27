@@ -55,3 +55,4 @@ module MusicPlayer
   class SongNotQueuedError < StandardError; end
   class EmptyQueueError < StandardError; end
 end
+

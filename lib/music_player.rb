@@ -22,10 +22,6 @@ module MusicPlayer
     player.previous
   end
 
-  def self.now_playing
-    player.now_playing
-  end
-
   def self.player
     @player ||= MusicPlayer::Player.new
   end

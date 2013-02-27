@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'vcr'
   gem 'jasmine'
+  gem 'simplecov', require: false
 end
 
 group :production do
