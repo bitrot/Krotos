@@ -22,14 +22,6 @@ module MusicPlayer
       mpd.stop
     end
 
-    def next
-      mpd.next
-    end
-
-    def previous
-      mpd.previous
-    end
-
     def pause
       mpd.pause
     end

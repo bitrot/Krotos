@@ -1,11 +1,9 @@
 module MusicPlayer
-  class SpotifyPlayer < MusicPlayer::Player
+  class SpotifyClient
     attr_reader :adapter
 
-    def initialize(username, password, appkey_path)
-      @username = server
-      @password = port
-      @adapter  = Hallon::Session.initialize IO.read(appkey_path)
+    def initialize(adapter = Hallon::Session)
+      @adapter  = adapter.initialize IO.read(appkey_path)
     end
 
     def connect
@@ -19,14 +17,6 @@ module MusicPlayer
 
     def stop
       adapter.stop
-    end
-
-    def next
-      adapter.next
-    end
-
-    def previous
-      adapter.previous
     end
 
     def pause

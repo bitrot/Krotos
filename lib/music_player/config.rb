@@ -46,3 +46,10 @@ module MusicPlayer
     end
   end
 end
+
+#Musicplayer.setup do |config|
+  #config.mpd_server = '192.0.0.1'
+  #config.mpd_port = 6060
+  #config.spotify_password = 'password'
+  #config.spotify_username = 'username'
+#end
