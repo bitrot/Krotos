@@ -4,18 +4,17 @@ module MusicPlayer
   class MPDClient
     def initialize(config, adapter = MPD)
       @mpd = adapter.new config.server, config.port
+      mpd.connect
     end
 
     def mpd
       @mpd
     end
 
-    def connect
-      mpd.connect
-    end
-
     def play(song)
-      mpd.play(song)
+      mpd.clear
+      mpd.add(song.path)
+      mpd.play
     end
 
     def stop
@@ -23,7 +22,7 @@ module MusicPlayer
     end
 
     def pause
-      mpd.pause
+      mpd.pause = !mpd.paused?
     end
   end
 
