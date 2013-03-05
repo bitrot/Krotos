@@ -58,4 +58,7 @@ group :services do
 
   # Soundcloud
   gem 'soundcloud'
+
+  # Rdio
+  gem 'rdio'
 end

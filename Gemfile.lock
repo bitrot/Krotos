@@ -154,6 +154,7 @@ GEM
     multi_xml (0.5.3)
     multipart-post (1.2.0)
     nokogiri (1.5.6)
+    oauth (0.4.7)
     pg (0.14.1)
     poltergeist (1.0.2)
       capybara (~> 1.1)
@@ -194,6 +195,9 @@ GEM
     rb-fsevent (0.9.3)
     rb-inotify (0.9.0)
       ffi (>= 0.5.0)
+    rdio (0.1.001)
+      json
+      oauth (>= 0.3.0)
     rdoc (3.12.1)
       json (~> 1.4)
     ref (1.0.2)
@@ -301,6 +305,7 @@ DEPENDENCIES
   puma
   rails
   rb-fsevent
+  rdio
   rspec-rails
   sass-rails (~> 3.2.3)
   simplecov
