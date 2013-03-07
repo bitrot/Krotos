@@ -1,19 +1,18 @@
-require 'hallon'
-require 'hallon-openal'
+require 'music_player/hallon_proxy'
 
 module MusicPlayer
   class SpotifyClient
     attr_reader :adapter, :player
 
-    def initialize(config = MusicPlayer.config.spotify, adapter = Hallon)
+    def initialize(config = MusicPlayer.config.spotify, adapter = HallonProxy)
       @adapter = adapter
-      # session = adapter::Session.initialize IO.read(config.appkey_path)
+      session = adapter.session(config.appkey_path)
       session.login! config.username, config.password
-      # @player adapter::Player.new(adapter::OpenAL)
+      @player = adapter.player
     end
 
     def play(song)
-      track = adapter::Track.new(song).load
+      track = adapter.track(song)
       player.play!(track)
     end
 
@@ -26,3 +25,4 @@ module MusicPlayer
     end
   end
 end
+
