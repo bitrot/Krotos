@@ -1,0 +1,6 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      .brand Krotos
+.container
+  = hb 'outlet'
