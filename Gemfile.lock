@@ -127,7 +127,7 @@ GEM
       haml
       sprockets
       tilt
-    handlebars-source (1.0.0.rc.3)
+    handlebars-source (1.0.0.rc3)
     hashie (2.0.2)
     headless (1.0.1)
     hike (1.2.1)
@@ -168,10 +168,12 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.21)
+    mini_portile2 (2.4.0)
     multi_json (1.6.1)
     multi_xml (0.5.3)
     multipart-post (1.2.0)
-    nokogiri (1.5.6)
+    nokogiri (1.10.4)
+      mini_portile2 (~> 2.4.0)
     oauth (0.4.7)
     pg (0.14.1)
     poltergeist (1.1.0)
