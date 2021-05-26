@@ -189,7 +189,7 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
-    oauth (0.4.7)
+    oauth (0.5.6)
     pg (0.14.1)
     poltergeist (1.1.0)
       capybara (~> 2.0, >= 2.0.1)
