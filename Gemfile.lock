@@ -38,9 +38,10 @@ GEM
       ember-source
       execjs
       handlebars-source
-    better_errors (0.7.0)
+    better_errors (2.8.0)
       coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.1)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (2.2.2.0)
@@ -99,6 +100,7 @@ GEM
       railties (>= 3.1)
     ember-source (0.0.1)
       handlebars-source (>= 1.0.0.rc3, < 1.0.0.rc4)
+    erubi (1.10.0)
     erubis (2.7.0)
     eventmachine (1.2.7)
     execjs (1.4.0)
@@ -187,10 +189,10 @@ GEM
     multi_xml (0.5.3)
     multipart-post (1.2.0)
     nio4r (2.5.7)
-    oauth (0.5.6)
     nokogiri (1.11.5)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    oauth (0.5.6)
     pg (0.14.1)
     poltergeist (1.1.0)
       capybara (~> 2.0, >= 2.0.1)
