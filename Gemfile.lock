@@ -98,8 +98,7 @@ GEM
       ember-source
       execjs (>= 1.2)
       railties (>= 3.1)
-    ember-source (0.0.1)
-      handlebars-source (>= 1.0.0.rc3, < 1.0.0.rc4)
+    ember-source (2.18.2)
     erubi (1.10.0)
     erubis (2.7.0)
     eventmachine (1.2.7)
@@ -142,7 +141,7 @@ GEM
       haml
       sprockets
       tilt
-    handlebars-source (1.0.0.rc3)
+    handlebars-source (4.7.7)
     hashie (2.0.2)
     headless (1.0.1)
     hike (1.2.3)
